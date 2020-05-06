@@ -1,24 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Helmet } from 'react-helmet';
 import './App.css';
+import MyCalendar from './MyCalendar.jsx';
+
+const events = [
+  {title: 'Mamama', start: '2020-05-20'},{title: 'Papapapap', start: '2020-05-15'}
+];
 
 function App() {
+  /**
+   * [handleClick description]
+   * @param  {Object} info event object
+   * @return {Object}      event.info
+   */
+  const handleClick = (info) => {
+    console.log('App.js ', info.event);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Helmet>
+        <meta charset="utf-8" />
+        <meta name="description" content="social calendar project for introverts" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="./favicon_io/facvicon.ico"
+          sizes="16x16"
+        />
+        <title>Time's Us</title>
+      </Helmet>
+      <h1>Time's Us</h1>
+      <MyCalendar events={events} handleClick={handleClick}/>
     </div>
   );
 }

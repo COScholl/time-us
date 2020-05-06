@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+/* Small 	sm 	min-width: 544px
+Medium 	md 	min-width: 768px
+Large 	lg 	min-width: 1012px
+Extra-large 	xl 	min-width: 1280px */

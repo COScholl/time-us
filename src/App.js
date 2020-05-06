@@ -1,13 +1,13 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import './App.css';
-import MyCalendar from './MyCalendar.jsx';
+import Head from './Head';
+import MyCalendar from './MyCalendar';
 
 const events = [
-  {title: 'Mamama', start: '2020-05-20'},{title: 'Papapapap', start: '2020-05-15'}
+  { title: 'Mamama', start: '2020-05-20' }, { title: 'Papapapap', start: '2020-05-15' },
 ];
 
-function App() {
+const App = () => {
   /**
    * [handleClick description]
    * @param  {Object} info event object
@@ -19,22 +19,11 @@ function App() {
 
   return (
     <div className="App">
-      <Helmet>
-        <meta charset="utf-8" />
-        <meta name="description" content="social calendar project for introverts" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="./favicon_io/facvicon.ico"
-          sizes="16x16"
-        />
-        <title>Time's Us</title>
-      </Helmet>
+      <Head />
       <h1>Time's Us</h1>
-      <MyCalendar events={events} handleClick={handleClick}/>
+      <MyCalendar events={events} handleClick={handleClick} />
     </div>
   );
-}
+};
 
 export default App;

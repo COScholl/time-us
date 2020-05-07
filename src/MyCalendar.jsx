@@ -8,12 +8,16 @@ const MyCalendar = (props) => {
   const { events, handleClick } = props;
 
   return (
-    <FullCalendar
-      defaultView="dayGridMonth"
-      plugins={[dayGridPlugin]}
-      events={events}
-      eventClick={handleClick}
-    />
+    <>
+      <h2>Social Calendar</h2>
+      <FullCalendar
+        height="parent"
+        defaultView="dayGridMonth"
+        plugins={[dayGridPlugin]}
+        events={events}
+        eventClick={handleClick}
+      />
+    </>
   );
 };
 
